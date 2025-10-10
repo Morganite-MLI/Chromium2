@@ -1,28 +1,27 @@
 {
     "name": "Chromium",
-    "version": "0.3.2",
-    "factorio_version": "1.1",
+    "version": "2.0.0",
+    "factorio_version": "2.0",
     "title": "Chromium",
-    "author": "Timeken",
-    "contact": "",
-    "homepage": "",
+    "author": "Timeken, cackling fiend",
+    "homepage": "https://discord.gg/ufvFUJtVwk",
     "dependencies": [
       "base >= 1.1.0",
-      "? 248k",
+      "? 248k-Redux",
       "? aai-industry",
-      "? BrassTacks",
+      "? BrassTacks-Updated",
       "? bobassembly",
       "? bzaluminum",
       "? bzfoundry",
       "? bzgas",
       "? bzsilicon",
-      "? IfNickel",
+      "? IfNickel-Updated",
       "? Indium",
       "? Krastorio2",
       "? RampantArsenal",
       "? space-exploration",
       "? Tantalite",
-      "? ThemTharHills"
+      "? ThemTharHills-Updated"
     ],
     "description": "Chromium is a mod adding the element chromium.\n\nThis mod is inspired by Brevven's BZ mods. \n\n Most if not all art is placeholder."
 }
