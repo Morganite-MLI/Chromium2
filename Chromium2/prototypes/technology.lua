@@ -28,7 +28,7 @@ data:extend(
         }
       },
     })
-    if mods["IfNickel"] and data.raw.item["gimbaled-thruster"] then
+    if mods["IfNickel-Updated"] and data.raw.item["gimbaled-thruster"] then
       util.add_prerequisite("gimbaled-thruster", "chromium-processing")
       --not sure why gimbaled thrusters don't need rocketry
       util.add_prerequisite("gimbaled-thruster", "rocketry")
@@ -233,7 +233,7 @@ data:extend(
         if mods["space-exploration"] then
           util.add_prerequisite("se-thruster-suit", "chromel-r-fabric")
         end
-        if mods["IfNickel"] and data.raw.item["nitinol-plate"] then
+        if mods["IfNickel-Updated"] and data.raw.item["nitinol-plate"] then
           util.add_prerequisite("nitinol-processing", "chromel-r-fabric")
         end
       local hr_low_density_structure_prerequisites = {"rocket-silo"}

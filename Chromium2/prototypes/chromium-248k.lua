@@ -1,6 +1,6 @@
 local util = require("data-util")
 
-if mods["248k"] then
+if mods["248k-Redux"] then
 data:extend({
     {
         type = "fluid",

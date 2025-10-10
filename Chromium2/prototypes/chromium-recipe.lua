@@ -76,7 +76,7 @@ if mods["Krastorio2"] then
 end
 
 local stainless_steel_ingredients = {{"steel-plate", 8}, {"chromium-plate", 2}}
-if mods["IfNickel"] then
+if mods["IfNickel-Updated"] then
     stainless_steel_ingredients = {{"steel-plate", 8}, {"chromium-plate", 1}, {"nickel-plate", 1}}
 end
 local stainless_steel_category = "crafting"
@@ -132,11 +132,11 @@ data:extend({
   })
 
 local chromel_r_fabric_ingredients = {{"copper-plate", 8}, {"chromium-plate", 2}}
-if mods["IfNickel"] then
+if mods["IfNickel-Updated"] then
   chromel_r_fabric_ingredients = {{"nickel-plate", 8}, {"chromium-plate", 2}}
 end
 local chromel_r_fabric_crafting = "crafting"
-if mods["248k"] then
+if mods["248k-Redux"] then
   chromel_r_fabric_crafting = "fi_fiberer_category"
 end
 data:extend({
@@ -214,7 +214,7 @@ data:extend({
 })
 
 local inconel_ingredients = {{"steel-plate", 5}, {"chromium-plate", 3}, {"iron-plate", 1}, mods["Tantalite"] and {"niobium-plate", 1}}
-if mods["IfNickel"] then
+if mods["IfNickel-Updated"] then
   inconel_ingredients = {{"nickel-plate", 5}, {"chromium-plate", 3}, {"iron-plate", 1}, mods["Tantalite"] and {"niobium-plate", 1}}
 end
 local inconel_category = "crafting"
@@ -248,7 +248,7 @@ data:extend({
 
 local automation_core3_ingredients = {(data.raw.item["automation-core-2"] and {"automation-core-2", 1}) or {"steel-plate", 5}, {"inconel-718", 10}}
 local automation_core3_subgroup = "intermediate-product"
-if (mods["BrassTacks"] and data.raw.item["advanced-gearbox"]) and (mods["IfNickel"] and data.raw.item["advanced-machining-tool"]) then --check for hardmode
+if (mods["BrassTacks-Updated"] and data.raw.item["advanced-gearbox"]) and (mods["IfNickel-Updated"] and data.raw.item["advanced-machining-tool"]) then --check for hardmode
   automation_core3_ingredients = {data.raw.item["automation-core-2"] and {"automation-core-2", 1}, {"advanced-gearbox", 1}, {"complex-joint", 2}, {"advanced-machining-tool", 2}, {"inconel-718", 4}}
   automation_core3_subgroup = "articulated-components"
 end
@@ -281,9 +281,9 @@ end
   end
   util.add_productivity("automation-core-3")
 
-local turbines_blade_ingredients = {{"inconel-718", 10}, mods["248k"] and {"fi_materials_GFK", 5}, {"air-bearing", 2}}
+local turbines_blade_ingredients = {{"inconel-718", 10}, mods["248k-Redux"] and {"fi_materials_GFK", 5}, {"air-bearing", 2}}
 local turbines_blade_subgroup = "intermediate-product"
-if mods["IfNickel"] then
+if mods["IfNickel-Updated"] then
   turbines_blade_subgroup = "engine-components"
 end
 data:extend({
@@ -314,7 +314,7 @@ else
   util.add_unlock("nuclear-power","turbine-blades")
 end
 local hrld_structure_subgroup = "intermediate-product"
-if mods["IfNickel"] then
+if mods["IfNickel-Updated"] then
   hrld_structure_subgroup ="frame-components"
 end
 data:extend({
@@ -368,7 +368,7 @@ else
   util.add_unlock("nuclear-power","air-bearing")
 end
 local advanced_electric_motor_subgroup = "intermediate-product"
-if mods["IfNickel"] then
+if mods["IfNickel-Updated"] then
   advanced_electric_motor_subgroup = "engine-components"
 end
 data:extend({
@@ -389,7 +389,7 @@ data:extend({
     order = "g",
     enabled = false,
     energy_required = 12,
-    ingredients = {{"inconel-718", 2}, {"air-bearing", 1}, {"electric-engine-unit", 2}, mods["ThemTharHills"] and {"hv-power-regulator", 1}, { type = "fluid", name = "lubricant", amount = 40 }},
+    ingredients = {{"inconel-718", 2}, {"air-bearing", 1}, {"electric-engine-unit", 2}, mods["ThemTharHills-Updated"] and {"hv-power-regulator", 1}, { type = "fluid", name = "lubricant", amount = 40 }},
     results = {{"advanced-electric-motor", 1}},
   }
 })
