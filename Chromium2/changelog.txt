@@ -1,0 +1,63 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.3.2
+Date: 2024-07-30
+  Features:
+    - Added inconel-718 to SE heavy composite.
+---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 2024-07-16
+  Features:
+    - Added stainless steel plate to SE corrosion resistance data.
+    - Added air bearing to SE friction data.
+    - Added chromel-r fabric to SE thermodynamics data.
+    - Increased heat resistant low density structure SE space recipe 2 -> 4
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2024-07-05
+  Features:
+    - Added heat resistant low density structure SE space recipe.
+    - Added heat resistant low density structure SE delivery cannon.
+    - Fixed air bearing not having an unlock.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.6
+Date: 2024-01-21
+  Features:
+    - Removed old unused files.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+Date: 2023-01-13
+  Features:
+    - Added heat resistant low density structure to SE space radiator.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 2023-01-06
+  Features:
+    - Fixed advanced electric motor unlock when not playing SE.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 2023-01-01
+  Features:
+    - Fixed inconel-718 not using niobium plate.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 2023-12-27
+  Features:
+    - Fixed turbine blade and automation core 3 unlock when not using SE.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2023-12-24
+  Features:
+    - Changed advanced electric motors subgroup to engine components if If I Had A Nickel is installed.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2023-12-19
+  Features:
+    - Added 248k support (molten, pure and cast chromium)
+    - Added an earlier chromium plate recipe.
+    - Moved stainless steel plate to unlock earlier.
+    - Fixed Indium cryogenic seal not using stainless steel plate.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2023-11-23
+  Features:
+    - Alpha release.
