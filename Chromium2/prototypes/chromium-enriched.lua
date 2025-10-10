@@ -60,8 +60,8 @@ data:extend(
       enabled = false,
       always_show_made_in = true,
       always_show_products = true,
-      ingredients = { {"enriched-chromium", 5} },
-      results = { {"chromium-plate", 5} },
+      ingredients = { {type="item", name="enriched-chromium", amount=5} },
+      results = { {type="item", name="chromium-plate", amount=5} },
       order = "a",
   },
 	{
@@ -77,7 +77,7 @@ data:extend(
 			{
 				icon = data.raw.item["chromite-ore"].icon,
 				icon_size =	data.raw.item["chromite-ore"].icon_size,
-				scale = 0.20 * (data.raw.fluid["dirty-water"].icon_size/data.raw.item["chromite-ore"].icon_size),
+				scale = 0.20,
 				shift = {0, 4}
 			}
 		},

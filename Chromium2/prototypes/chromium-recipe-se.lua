@@ -62,7 +62,7 @@ if mods["space-exploration"] then
     type = "recipe",
     name = "chromium-ingot",
     category = "casting",
-    results = {{"chromium-ingot", 1}},
+    results = {{type="item", name="chromium-ingot", amount=1}},
     energy_required = 18.75,
     ingredients = {
       {type = "fluid", name = "molten-chromium", amount = 250},

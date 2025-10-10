@@ -27,8 +27,8 @@ function util.se_landfill(params)
         category = "hard-recycling",
         order = "z-b-"..params.ore,
         subgroup = "terrain",
-        result = "landfill",
-        ingredients = {{params.ore, 50}},
+        results = {{type="item", name="landfill", amount=1}},
+        ingredients = {{type="item", name=params.ore, amount=50}},
       }
     })
     util.add_unlock("se-recycling-facility", lname)
@@ -38,116 +38,114 @@ end
 -- se matter
 -- params: ore, energy_required, quant_out, quant_in, icon_size, stream_out
 function util.se_matter(params)
-  if mods["space-exploration"] > "0.6" then
-    if not params.quant_in then params.quant_in = params.quant_out end
-    if not params.icon_size then params.icon_size = 64 end
-    local fname = "matter-fusion-"..params.ore
-    local sedata = mods["Krastorio2"] and "se-kr-matter-synthesis-data" or "se-fusion-test-data"
-    local sejunk = mods["Krastorio2"] and "se-broken-data" or "se-junk-data"
+  if not params.quant_in then params.quant_in = params.quant_out end
+  if not params.icon_size then params.icon_size = 64 end
+  local fname = "matter-fusion-"..params.ore
+  local sedata = mods["Krastorio2"] and "se-kr-matter-synthesis-data" or "se-fusion-test-data"
+  local sejunk = mods["Krastorio2"] and "se-broken-data" or "se-junk-data"
+  data:extend({
+    {
+      type = "recipe",
+      name = fname,
+      localised_name = {"recipe-name.se-matter-fusion-to", {"item-name."..params.ore}},
+      category = "space-materialisation",
+      subgroup = "materialisation",
+      order = "a-b-z",
+      icons = {
+        {icon = "__space-exploration-graphics__/graphics/blank.png",
+         icon_size = 64, scale = 0.5},
+        {icon = "__space-exploration-graphics__/graphics/icons/fluid/particle-stream.png",
+         icon_size = 64,  scale = 0.33, shift = {8,-8}},
+        {icon = "__Chromium__/graphics/icons/"..params.ore..".png",
+         icon_size = params.icon_size, scale = 0.33 * 64/params.icon_size, shift={-8, 8}},
+        {icon = "__space-exploration-graphics__/graphics/icons/transition-arrow.png",
+         icon_size = 64, scale = 0.5},
+      },
+      energy_required = params.energy_required,
+      enabled = false,
+      ingredients = {
+        {sedata, 1},
+        {type="fluid", name="se-particle-stream", amount=50},
+        {type="fluid", name="se-space-coolant-supercooled", amount=25},
+      },
+      results = {
+        {type = "item", name = params.ore, amount = params.quant_out},
+        {type="item", name="se-contaminated-scrap", amount=1},
+        {type=item, name=sedata, amount=1, probability=.99},
+        {type=item, name=sejunk, amount=1, probability=.01},
+        {type="fluid", name="se-space-coolant-hot", amount=25, catalyst_amount=25},
+      }
+    }
+  })
+  util.add_unlock("se-space-matter-fusion", fname)
+
+  if mods["Krastorio2"] then
+    local lname = params.ore.."-to-particle-stream"
     data:extend({
+      enabled = false,
       {
         type = "recipe",
-        name = fname,
-        localised_name = {"recipe-name.se-matter-fusion-to", {"item-name."..params.ore}},
+        name = lname,
+        localised_name = {"recipe-name.se-kr-matter-liberation", {"item-name."..params.ore}},
         category = "space-materialisation",
-        subgroup = "materialisation",
+        subgroup = "advanced-particle-stream",
         order = "a-b-z",
         icons = {
           {icon = "__space-exploration-graphics__/graphics/blank.png",
            icon_size = 64, scale = 0.5},
           {icon = "__space-exploration-graphics__/graphics/icons/fluid/particle-stream.png",
-           icon_size = 64,  scale = 0.33, shift = {8,-8}},
+           icon_size = 64,  scale = 0.33, shift = {-8,8}},
           {icon = "__Chromium__/graphics/icons/"..params.ore..".png",
-           icon_size = params.icon_size, scale = 0.33 * 64/params.icon_size, shift={-8, 8}},
+           icon_size = params.icon_size, scale = 0.33 * 64/params.icon_size, shift={8, -8}},
           {icon = "__space-exploration-graphics__/graphics/icons/transition-arrow.png",
            icon_size = 64, scale = 0.5},
         },
-        energy_required = params.energy_required,
+        energy_required = 30,
         enabled = false,
         ingredients = {
-          {sedata, 1},
+          {type="item", name="se-kr-matter-liberation-data", amount=1},
+          {type="item", name=params.ore, amount=params.quant_in},
           {type="fluid", name="se-particle-stream", amount=50},
-          {type="fluid", name="se-space-coolant-supercooled", amount=25},
         },
         results = {
-          {params.ore, params.quant_out},
-          {"se-contaminated-scrap", 1},
-          {type=item, name=sedata, amount=1, probability=.99},
+          {type=item, name="se-kr-matter-liberation-data", amount=1, probability=.99},
           {type=item, name=sejunk, amount=1, probability=.01},
-          {type="fluid", name="se-space-coolant-hot", amount=25, catalyst_amount=25},
+          {type="fluid", name="se-particle-stream", amount=params.stream_out, catalyst_amount=50},
         }
       }
     })
-    util.add_unlock("se-space-matter-fusion", fname)
-
-    if mods["Krastorio2"] then
-      local lname = params.ore.."-to-particle-stream"
+    if not data.raw.technology["bz-advanced-stream-production"] then
       data:extend({
-        enabled = false,
         {
-          type = "recipe",
-          name = lname,
-          localised_name = {"recipe-name.se-kr-matter-liberation", {"item-name."..params.ore}},
-          category = "space-materialisation",
-          subgroup = "advanced-particle-stream",
-          order = "a-b-z",
-          icons = {
-            {icon = "__space-exploration-graphics__/graphics/blank.png",
-             icon_size = 64, scale = 0.5},
-            {icon = "__space-exploration-graphics__/graphics/icons/fluid/particle-stream.png",
-             icon_size = 64,  scale = 0.33, shift = {-8,8}},
-            {icon = "__Chromium__/graphics/icons/"..params.ore..".png",
-             icon_size = params.icon_size, scale = 0.33 * 64/params.icon_size, shift={8, -8}},
-            {icon = "__space-exploration-graphics__/graphics/icons/transition-arrow.png",
-             icon_size = 64, scale = 0.5},
+          type = "technology",
+          name ="bz-advanced-stream-production",
+          localised_name = {"", {"technology-name.se-kr-advanced-stream-production"}, " 2"},
+          icon = "__space-exploration-graphics__/graphics/technology/material-fabricator.png",
+          icon_size = 128,
+          effects = {},
+          unit = {
+            count = 100,
+            time = 15,
+            ingredients = {
+              {"automation-science-pack", 1},
+              {"logistic-science-pack", 1},
+              {"chemical-science-pack", 1},
+              {"se-rocket-science-pack", 1},
+              {"space-science-pack", 1},
+              {"production-science-pack", 1},
+              {"utility-science-pack", 1},
+              {"se-astronomic-science-pack-4", 1},
+              {"se-energy-science-pack-4", 1},
+              {"se-material-science-pack-4", 1},
+              {"matter-tech-card", 1},
+              {"se-deep-space-science-pack-1", 1},
+            }
           },
-          energy_required = 30,
-          enabled = false,
-          ingredients = {
-            {"se-kr-matter-liberation-data", 1},
-            {params.ore, params.quant_in},
-            {type="fluid", name="se-particle-stream", amount=50},
-          },
-          results = {
-            {type=item, name="se-kr-matter-liberation-data", amount=1, probability=.99},
-            {type=item, name=sejunk, amount=1, probability=.01},
-            {type="fluid", name="se-particle-stream", amount=params.stream_out, catalyst_amount=50},
-          }
-        }
+          prerequisites = {"se-kr-advanced-stream-production"},
+        },
       })
-      if not data.raw.technology["bz-advanced-stream-production"] then
-        data:extend({
-          {
-            type = "technology",
-            name ="bz-advanced-stream-production",
-            localised_name = {"", {"technology-name.se-kr-advanced-stream-production"}, " 2"},
-            icon = "__space-exploration-graphics__/graphics/technology/material-fabricator.png",
-            icon_size = 128,
-            effects = {},
-            unit = {
-              count = 100,
-              time = 15,
-              ingredients = {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1},
-                {"se-rocket-science-pack", 1},
-                {"space-science-pack", 1},
-                {"production-science-pack", 1},
-                {"utility-science-pack", 1},
-                {"se-astronomic-science-pack-4", 1},
-                {"se-energy-science-pack-4", 1},
-                {"se-material-science-pack-4", 1},
-                {"matter-tech-card", 1},
-                {"se-deep-space-science-pack-1", 1},
-              }
-            },
-            prerequisites = {"se-kr-advanced-stream-production"},
-          },
-        })
-      end
-      util.add_unlock("bz-advanced-stream-production", lname)
     end
+    util.add_unlock("bz-advanced-stream-production", lname)
   end
 end
 

@@ -40,7 +40,7 @@ data:extend({
     main_product = "chromium-plate",
     enabled = false,
     energy_required = 24,
-    ingredients = {{"chromite-ore", 15}},
+    ingredients = {{type="item", name="chromite-ore", amount=15}},
     results = {
       {type="item", name = "chromium-plate", amount=5}
     }
@@ -75,9 +75,9 @@ if mods["Krastorio2"] then
     })
 end
 
-local stainless_steel_ingredients = {{"steel-plate", 8}, {"chromium-plate", 2}}
+local stainless_steel_ingredients = {{type="item", name="steel-plate", amount=8}, {type="item", name="chromium-plate", amount=2}}
 if mods["IfNickel-Updated"] then
-    stainless_steel_ingredients = {{"steel-plate", 8}, {"chromium-plate", 1}, {"nickel-plate", 1}}
+    stainless_steel_ingredients = {{type="item", name="steel-plate", amount=8}, {type="item", name="chromium-plate", amount=1}, {type="item", name="nickel-plate", amount=1}}
 end
 local stainless_steel_category = "crafting"
 if mods["bzfoundry"] then
@@ -101,7 +101,7 @@ data:extend({
     enabled = false,
     energy_required = 4,
     ingredients = stainless_steel_ingredients,
-    results = {{"stainless-steel-plate", 10}},
+    results = {{type="item", name="stainless-steel-plate", amount=10}},
   }
 })
 
@@ -127,13 +127,13 @@ data:extend({
       enabled = false,
       energy_required = 8,
       ingredients = polyethylene_plastic_ingredients,
-      results = {{"plastic-bar", 15}},
+      results = {{type="item", name="plastic-bar", amount=15}},
     }
   })
 
-local chromel_r_fabric_ingredients = {{"copper-plate", 8}, {"chromium-plate", 2}}
+local chromel_r_fabric_ingredients = {{type="item", name="copper-plate", amount=8}, {type="item", name="chromium-plate", amount=2}}
 if mods["IfNickel-Updated"] then
-  chromel_r_fabric_ingredients = {{"nickel-plate", 8}, {"chromium-plate", 2}}
+  chromel_r_fabric_ingredients = {{type="item", name="nickel-plate", amount=8}, {type="item", name="chromium-plate", amount=2}}
 end
 local chromel_r_fabric_crafting = "crafting"
 if mods["248k-Redux"] then
@@ -157,13 +157,13 @@ data:extend({
     enabled = false,
     energy_required = 5,
     ingredients = chromel_r_fabric_ingredients,
-    results = {{"chromel-r-fabric", 5}},
+    results = {{type="item", name="chromel-r-fabric", amount=5}},
   }
 })
 
-local basic_vehicle_frame_ingredients = {{"steel-plate", 5}, {"copper-plate", 10}}
+local basic_vehicle_frame_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="copper-plate", amount=10}}
 if mods["bzaluminum"] then
-  basic_vehicle_frame_ingredients = {{"steel-plate", 5}, {"alumina", 10}}
+  basic_vehicle_frame_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="alumina", amount=10}}
 end
 data:extend({
   {
@@ -183,13 +183,13 @@ data:extend({
     enabled = false,
     energy_required = 4,
     ingredients = basic_vehicle_frame_ingredients,
-    results = {{"basic-vehicle-frame", 1}},
+    results = {{type="item", name="basic-vehicle-frame", amount=1}},
   }
 })
 
-local vehicle_frame_ingredients = {{"basic-vehicle-frame", 1}, {"stainless-steel-plate", 15}, {"copper-plate", 20}}
+local vehicle_frame_ingredients = {{type="item", name="basic-vehicle-frame", amount=1}, {type="item", name="stainless-steel-plate", amount=15}, {type="item", name="copper-plate", amount=20}}
 if mods["bzaluminum"] then
-  vehicle_frame_ingredients = {{"basic-vehicle-frame", 1}, {"stainless-steel-plate", 15}, {"aluminum-6061", 20}}
+  vehicle_frame_ingredients = {{type="item", name="basic-vehicle-frame", amount=1}, {type="item", name="stainless-steel-plate", amount=15}, {type="item", name="aluminum-6061", amount=20}}
 end
 data:extend({
   {
@@ -209,13 +209,13 @@ data:extend({
     enabled = false,
     energy_required = 6,
     ingredients = vehicle_frame_ingredients,
-    results = {{"vehicle-frame", 1}},
+    results = {{type="item", name="vehicle-frame", amount=1}},
   }
 })
 
-local inconel_ingredients = {{"steel-plate", 5}, {"chromium-plate", 3}, {"iron-plate", 1}, mods["Tantalite"] and {"niobium-plate", 1}}
+local inconel_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="chromium-plate", amount=3}, {type="item", name="iron-plate", amount=1}, mods["Tantalite"] and {type="item", name="niobium-plate", amount=1}}
 if mods["IfNickel-Updated"] then
-  inconel_ingredients = {{"nickel-plate", 5}, {"chromium-plate", 3}, {"iron-plate", 1}, mods["Tantalite"] and {"niobium-plate", 1}}
+  inconel_ingredients = {{type="item", name="nickel-plate", amount=5}, {type="item", name="chromium-plate", amount=3}, {type="item", name="iron-plate", amount=1}, mods["Tantalite"] and {type="item", name="niobium-plate", amount=1}}
 end
 local inconel_category = "crafting"
 local inconel_subgroup = "intermediate-product"
@@ -242,14 +242,14 @@ data:extend({
     enabled = false,
     energy_required = 30,
     ingredients = inconel_ingredients,
-    results = {{"inconel-718", 10}},
+    results = {{type="item", name="inconel-718", amount=10}},
   }
 })
 
-local automation_core3_ingredients = {(data.raw.item["automation-core-2"] and {"automation-core-2", 1}) or {"steel-plate", 5}, {"inconel-718", 10}}
+local automation_core3_ingredients = {(data.raw.item["automation-core-2"] and {type="item", name="automation-core-2", amount=1}) or {type="item", name="steel-plate", amount=5}, {type="item", name="inconel-718", amount=10}}
 local automation_core3_subgroup = "intermediate-product"
 if (mods["BrassTacks-Updated"] and data.raw.item["advanced-gearbox"]) and (mods["IfNickel-Updated"] and data.raw.item["advanced-machining-tool"]) then --check for hardmode
-  automation_core3_ingredients = {data.raw.item["automation-core-2"] and {"automation-core-2", 1}, {"advanced-gearbox", 1}, {"complex-joint", 2}, {"advanced-machining-tool", 2}, {"inconel-718", 4}}
+  automation_core3_ingredients = {data.raw.item["automation-core-2"] and {type="item", name="automation-core-2", amount=1}, {type="item", name="advanced-gearbox", amount=1}, {type="item", name="complex-joint", amount=2}, {type="item", name="advanced-machining-tool", amount=2}, {type="item", name="inconel-718", amount=4}}
   automation_core3_subgroup = "articulated-components"
 end
   data:extend({
@@ -271,7 +271,7 @@ end
       enabled = false,
       energy_required = 5,
       ingredients = automation_core3_ingredients,
-      results = {{"automation-core-3", 1}},
+      results = {{type="item", name="automation-core-3", amount=1}},
     }
   })
   if mods["space-exploration"] then
@@ -281,7 +281,7 @@ end
   end
   util.add_productivity("automation-core-3")
 
-local turbines_blade_ingredients = {{"inconel-718", 10}, mods["248k-Redux"] and {"fi_materials_GFK", 5}, {"air-bearing", 2}}
+local turbines_blade_ingredients = {{type="item", name="inconel-718", amount=10}, mods["248k-Redux"] and {type="item", name="fi_materials_GFK", amount=5}, {type="item", name="air-bearing", amount=2}}
 local turbines_blade_subgroup = "intermediate-product"
 if mods["IfNickel-Updated"] then
   turbines_blade_subgroup = "engine-components"
@@ -305,7 +305,7 @@ data:extend({
     enabled = false,
     energy_required = 15,
     ingredients = turbines_blade_ingredients,
-    results = {{"turbine-blades", 1}},
+    results = {{type="item", name="turbine-blades", amount=1}},
   }
 })
 if mods["space-exploration"] then
@@ -335,8 +335,8 @@ data:extend({
     order = "h",
     enabled = false,
     energy_required = 8,
-    ingredients = {{"inconel-718", 1}, {"low-density-structure", 1}, mods["space-exploration"] and {"se-heat-shielding", 1}},
-    results = {{"heat-resistant-low-density-structure", 2}},
+    ingredients = {{type="item", name="inconel-718", amount=1}, {type="item", name="low-density-structure", amount=1}, mods["space-exploration"] and {type="item", name="se-heat-shielding", amount=1}},
+    results = {{type="item", name="heat-resistant-low-density-structure", amount=2}},
   }
 })
 
@@ -358,8 +358,8 @@ data:extend({
     order = "h",
     enabled = false,
     energy_required = 5,
-    ingredients = {{"stainless-steel-plate", 2},data.raw.item["cryogenic-seal"] and {"cryogenic-seal", 1}, { type = "fluid", name = "lubricant", amount = 5 }},
-    results = {{"air-bearing", 1}},
+    ingredients = {{type="item", name="stainless-steel-plate", amount=2},data.raw.item["cryogenic-seal"] and {type="item", name="cryogenic-seal", amount=1}, { type = "fluid", name = "lubricant", amount = 5 }},
+    results = {{type="item", name="air-bearing", amount=1}},
   }
 })
 if mods["Krastorio2"] then
@@ -389,8 +389,8 @@ data:extend({
     order = "g",
     enabled = false,
     energy_required = 12,
-    ingredients = {{"inconel-718", 2}, {"air-bearing", 1}, {"electric-engine-unit", 2}, mods["ThemTharHills-Updated"] and {"hv-power-regulator", 1}, { type = "fluid", name = "lubricant", amount = 40 }},
-    results = {{"advanced-electric-motor", 1}},
+    ingredients = {{type="item", name="inconel-718", amount=2}, {type="item", name="air-bearing", amount=1}, {type="item", name="electric-engine-unit", amount=2}, mods["ThemTharHills-Updated"] and {type="item", name="hv-power-regulator", amount=1}, { type = "fluid", name = "lubricant", amount = 40 }},
+    results = {{type="item", name="advanced-electric-motor", amount=1}},
   }
 })
 if mods["space-exploration"] then
@@ -412,8 +412,8 @@ if mods["space-exploration"] then
       order = "h",
       enabled = false,
       energy_required = 10,
-      ingredients = {{"inconel-718", 1}, {"se-beryllium-plate", 1}, {"se-heat-shielding", 1}},
-      results = {{"heat-resistant-low-density-structure", 4}},
+      ingredients = {{type="item", name="inconel-718", amount=1}, {type="item", name="se-beryllium-plate", amount=1}, {type="item", name="se-heat-shielding", amount=1}},
+      results = {{type="item", name="heat-resistant-low-density-structure", amount=4}},
     }
   })
 end
