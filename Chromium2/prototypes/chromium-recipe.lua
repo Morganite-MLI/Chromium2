@@ -214,9 +214,12 @@ data:extend({
   }
 })
 
-local inconel_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="chromium-plate", amount=3}, {type="item", name="iron-plate", amount=1}, mods["Tantalite"] and {type="item", name="niobium-plate", amount=1}}
+local inconel_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="chromium-plate", amount=3}, {type="item", name="iron-plate", amount=1}}
 if mods["IfNickel-Updated"] then
-  inconel_ingredients = {{type="item", name="nickel-plate", amount=5}, {type="item", name="chromium-plate", amount=3}, {type="item", name="iron-plate", amount=1}, mods["Tantalite"] and {type="item", name="niobium-plate", amount=1}}
+  inconel_ingredients = {{type="item", name="nickel-plate", amount=5}, {type="item", name="chromium-plate", amount=3}, {type="item", name="iron-plate", amount=1}}
+end
+if mods["Tantalite2"] then
+  table.insert(inconel_ingredients, {type="item", name="niobium-plate", amount=1})
 end
 local inconel_category = "crafting"
 local inconel_subgroup = "intermediate-product"

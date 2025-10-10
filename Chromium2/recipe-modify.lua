@@ -38,7 +38,7 @@ if mods["space-exploration"] then
     util.replace_ingredient("se-thruster-suit", "low-density-structure", "chromel-r-fabric")
 end
 
-if mods["Indium"] then
+if mods["Indium2"] then
     util.replace_ingredient("cryogenic-seal", "steel-plate", "stainless-steel-plate")
 end
 
