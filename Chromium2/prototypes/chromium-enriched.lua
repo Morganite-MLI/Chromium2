@@ -7,7 +7,7 @@ data:extend(
     type = "item",
     name = "enriched-chromium",
     icon_size = 64,
-    icon = "__Chromium__/graphics/icons/enriched-chromium.png",
+    icon = "__Chromium2__/graphics/icons/enriched-chromium.png",
     group ="raw-material",
     subgroup = "chromium",
     order = "a",
@@ -17,7 +17,7 @@ data:extend(
     type = "recipe",
     name = "enriched-chromium",
     main_product="enriched-chromium",
-    icon = "__Chromium__/graphics/icons/enriched-chromium.png",
+    icon = "__Chromium2__/graphics/icons/enriched-chromium.png",
     icon_size = 64,
     category = "chemistry",
     energy_required = 3,
@@ -52,8 +52,8 @@ data:extend(
       name = "enriched-chromium-plate",
       icons =
       {
-        { icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64 },
-        { icon = "__Chromium__/graphics/icons/enriched-chromium.png", icon_size = 64, scale=0.125, shift= {-8, -8}},
+        { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64 },
+        { icon = "__Chromium2__/graphics/icons/enriched-chromium.png", icon_size = 64, scale=0.125, shift= {-8, -8}},
       },
       category = "smelting",
       energy_required = 16,

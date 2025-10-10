@@ -7,7 +7,7 @@ data:extend(
         type = "technology",
         name = "chromium-processing",
         icon_size = 64,
-        icon = "__Chromium__/graphics/icons/chromite-ore.png",
+        icon = "__Chromium2__/graphics/icons/chromite-ore.png",
         prerequisites = {"kr-advanced-chemistry"},
         effects = {
             {
@@ -44,7 +44,7 @@ data:extend(
     type = "technology",
     name = "polyethylene-plastic",
     icons = {
-        { icon = "__Chromium__/graphics/technology/polyethylene.png", icon_size = 64}
+        { icon = "__Chromium2__/graphics/technology/polyethylene.png", icon_size = 64}
       },
     prerequisites = polyethylene_plastic_prerequisites,
     effects = {
@@ -73,7 +73,7 @@ data:extend(
         type = "technology",
         name = "stainless-steel-processing",
         icons = {
-            { icon = "__Chromium__/graphics/icons/stainless-steel-plate.png", icon_size = 64}
+            { icon = "__Chromium2__/graphics/icons/stainless-steel-plate.png", icon_size = 64}
           },
         prerequisites = { "advanced-material-processing"},
         effects = {
@@ -112,7 +112,7 @@ data:extend(
           type = "technology",
           name = "chrome-alloys",
           icons = {
-              { icon = "__Chromium__/graphics/icons/inconel-718.png", icon_size = 64}
+              { icon = "__Chromium2__/graphics/icons/inconel-718.png", icon_size = 64}
             },
           prerequisites = chrome_alloys_prerequisites,
           effects = {
@@ -141,7 +141,7 @@ data:extend(
         type = "technology",
         name = "basic-vehicle-frame-production",
         icons = {
-            { icon = "__Chromium__/graphics/icons/basic-vehicle-frame.png", icon_size = 128}
+            { icon = "__Chromium2__/graphics/icons/basic-vehicle-frame.png", icon_size = 128}
           },
         prerequisites = {"steel-processing"},
         effects = {
@@ -169,7 +169,7 @@ data:extend(
           type = "technology",
           name = "vehicle-frame-production",
           icons = {
-              { icon = "__Chromium__/graphics/icons/vehicle-frame.png", icon_size = 128}
+              { icon = "__Chromium2__/graphics/icons/vehicle-frame.png", icon_size = 128}
             },
           prerequisites = { "stainless-steel-processing", "automobilism"},
           effects = {
@@ -213,7 +213,7 @@ data:extend(
             type = "technology",
             name = "chromel-r-fabric",
             icons = {
-                { icon = "__Chromium__/graphics/icons/chromel-r-fabric.png", icon_size = 64}
+                { icon = "__Chromium2__/graphics/icons/chromel-r-fabric.png", icon_size = 64}
               },
             prerequisites = chromel_r_fabric_prerequisites,
             effects = {
@@ -256,7 +256,7 @@ data:extend(
             type = "technology",
             name = "heat-resistant-low-density-structure",
             icons = {
-                { icon = "__Chromium__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64}
+                { icon = "__Chromium2__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64}
               },
             prerequisites = hr_low_density_structure_prerequisites,
             effects = {
@@ -280,7 +280,7 @@ data:extend(
               type = "technology",
               name = "beryllium-heat-resistant-low-density-structure",
               icons = {
-                { icon = "__Chromium__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64},
+                { icon = "__Chromium2__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64},
                 { icon = "__space-exploration-graphics__/graphics/icons/astronomic/planet-orbit.png", icon_size = 64, scale=0.25, shift= {-8, -8}}
               },
               prerequisites = {"se-astronomic-science-pack-1"},

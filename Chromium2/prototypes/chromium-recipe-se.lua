@@ -21,7 +21,7 @@ if mods["space-exploration"] then
   {
     type = "item",
     name = "chromium-ingot",
-    icons = {{icon = "__Chromium__/graphics/icons/chromium-ingot.png", icon_size = 64}},
+    icons = {{icon = "__Chromium2__/graphics/icons/chromium-ingot.png", icon_size = 64}},
     order = "b-b",
     stack_size = 50,
     subgroup = "chromium",
@@ -33,7 +33,7 @@ if mods["space-exploration"] then
     max_temperature = 232,
     base_color = {r=191, g=219, b=233},
     flow_color = {r=191, g=219, b=233},
-    icons = {{icon = "__Chromium__/graphics/icons/molten-chromium.png", icon_size = 64}},
+    icons = {{icon = "__Chromium2__/graphics/icons/molten-chromium.png", icon_size = 64}},
     order = "a[molten]-a",
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
@@ -77,8 +77,8 @@ if mods["space-exploration"] then
     name = "chromium-ingot-to-plate",
 
     icons = {
-      {icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64},
-      {icon = "__Chromium__/graphics/icons/chromium-ingot.png", icon_size = 32, scale = 0.125, shift = {-8, -8}},
+      {icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64},
+      {icon = "__Chromium2__/graphics/icons/chromium-ingot.png", icon_size = 32, scale = 0.125, shift = {-8, -8}},
     },
     results = {
       {name = "chromium-plate", amount = 10},

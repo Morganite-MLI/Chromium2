@@ -1,6 +1,9 @@
-local resource_autoplace = require('resource-autoplace')
+local resource_autoplace = require('resource-autoplace');
+local item_sounds = require('__base__.prototypes.item_sounds')
 
-local util = require("data-util")
+data.raw.planet.nauvis.map_gen_settings.autoplace_controls["chromite-ore"] = {}
+data.raw.planet.nauvis.map_gen_settings.autoplace_settings.entity.settings["chromite-ore"] = {}
+resource_autoplace.initialize_patch_set("chromite-ore", true)
 
 data:extend({
   {
@@ -11,15 +14,11 @@ data:extend({
     order = "b-e"
   },
   {
-    type = "noise-layer",
-    name = "chromite-ore"
-  },
-  {
     type = "resource",
     icon_size = 64,
     icon_mipmaps = 3,
     name = "chromite-ore",
-    icon = "__Chromium__/graphics/icons/chromite-ore.png",
+    icon = "__Chromium2__/graphics/icons/chromite-ore.png",
     flags = { "placeable-neutral" },
     order = "a-b-a",
     map_color = { r = 0.90, g = 0.80, b = 1.00 },
@@ -48,7 +47,7 @@ data:extend({
     {
       sheet =
       {
-        filename = "__Chromium__/graphics/entity/ores/hr-chromite-ore.png",
+        filename = "__Chromium2__/graphics/entity/ores/hr-chromite-ore.png",
         priority = "extra-high",
         size = 128,
         frame_count = 8,
@@ -62,9 +61,13 @@ data:extend({
     name = "chromite-ore",
     icon_size = 64,
     icon_mipmaps = 3,
-    icon = "__Chromium__/graphics/icons/chromite-ore.png",
+    icon = "__Chromium2__/graphics/icons/chromite-ore.png",
     subgroup = "raw-resource",
     order = "t-c-a",
-    stack_size = 50
+    stack_size = 50,
+    weight = 20*kg,
+    inventory_move_sound = item_sounds.resource_inventory_move,
+    pick_sound = item_sounds.resource_inventory_pickup,
+    drop_sound = item_sounds.resource_inventory_move,
   },
 })

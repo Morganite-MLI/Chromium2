@@ -18,7 +18,7 @@ data:extend({
   {
     type = "item",
     name = "chromium-plate",
-    icon = "__Chromium__/graphics/icons/chromium-plate.png",
+    icon = "__Chromium2__/graphics/icons/chromium-plate.png",
     icon_size = 64,
     subgroup = "chromium",
     order = "b[chromium-plate]",
@@ -31,10 +31,10 @@ data:extend({
     order = "a[chromium-plate]",
     icons = (mods["Krastorio2"] and
         {
-          { icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64},
-          { icon = "__Chromium__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.125, shift= {-8, -8}},
+          { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64},
+          { icon = "__Chromium2__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.125, shift= {-8, -8}},
         } or {
-          { icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64},
+          { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64},
         }
 ),
     main_product = "chromium-plate",
@@ -53,8 +53,8 @@ if mods["Krastorio2"] then
         type = "recipe",
         name = "chromium-electrolysis",
         icons = {
-          { icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64},
-          { icon = "__Chromium__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.125, shift= {-8, -8}}
+          { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64},
+          { icon = "__Chromium2__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.125, shift= {-8, -8}}
         },
         category = "electrolysis",
         order = "a[chromium-plate]",
@@ -87,7 +87,7 @@ data:extend({
   {
     type = "item",
     name = "stainless-steel-plate",
-    icon = "__Chromium__/graphics/icons/stainless-steel-plate.png",
+    icon = "__Chromium2__/graphics/icons/stainless-steel-plate.png",
     icon_size = 64,
     subgroup = "chromium",
     order = "b[stainless-steel-plate]",
@@ -143,7 +143,7 @@ data:extend({
   {
     type = "item",
     name = "chromel-r-fabric",
-    icon = "__Chromium__/graphics/icons/chromel-r-fabric.png",
+    icon = "__Chromium2__/graphics/icons/chromel-r-fabric.png",
     icon_size = 64,
     subgroup = "chromium",
     order = "c[chromel-r-fabric]",
@@ -169,7 +169,7 @@ data:extend({
   {
     type = "item",
     name = "basic-vehicle-frame",
-    icon = "__Chromium__/graphics/icons/basic-vehicle-frame.png",
+    icon = "__Chromium2__/graphics/icons/basic-vehicle-frame.png",
     icon_size = 128,
     subgroup = "intermediate-product",
     order = "v[basic-vehicle-frame]",
@@ -195,7 +195,7 @@ data:extend({
   {
     type = "item",
     name = "vehicle-frame",
-    icon = "__Chromium__/graphics/icons/vehicle-frame.png",
+    icon = "__Chromium2__/graphics/icons/vehicle-frame.png",
     icon_size = 128,
     subgroup = "intermediate-product",
     order = "v[vehicle-frame]",
@@ -227,7 +227,7 @@ data:extend({
   {
     type = "item",
     name = "inconel-718",
-    icon = "__Chromium__/graphics/icons/inconel-718.png",
+    icon = "__Chromium2__/graphics/icons/inconel-718.png",
     icon_size = 64,
     group = "intermediate-products",
     subgroup = inconel_subgroup,
@@ -256,7 +256,7 @@ end
     {
       type = "item",
       name = "automation-core-3",
-      icon = "__Chromium__/graphics/icons/automation-core-3.png",
+      icon = "__Chromium2__/graphics/icons/automation-core-3.png",
       icon_size = 64,
       group = "intermediate-product",
       subgroup = automation_core3_subgroup,
@@ -293,7 +293,7 @@ data:extend({
   {
     type = "item",
     name = "turbine-blades",
-    icon = "__Chromium__/graphics/icons/turbine-blades.png",
+    icon = "__Chromium2__/graphics/icons/turbine-blades.png",
     icon_size = 64,
     group = "intermediate-products",
     subgroup = turbines_blade_subgroup,
@@ -324,7 +324,7 @@ data:extend({
   {
     type = "item",
     name = "heat-resistant-low-density-structure",
-    icon = "__Chromium__/graphics/icons/heat-resistant-low-density-structure.png",
+    icon = "__Chromium2__/graphics/icons/heat-resistant-low-density-structure.png",
     icon_size = 64,
     group = "intermediate-products",
     subgroup = hrld_structure_subgroup,
@@ -351,7 +351,7 @@ data:extend({
   {
     type = "item",
     name = "air-bearing",
-    icon = "__Chromium__/graphics/icons/air-bearing.png",
+    icon = "__Chromium2__/graphics/icons/air-bearing.png",
     icon_size = 64,
     group = "intermediate-products",
     subgroup = "intermediate-product",
@@ -386,7 +386,7 @@ data:extend({
   {
     type = "item",
     name = "advanced-electric-motor",
-    icon = "__Chromium__/graphics/icons/advanced-electric-motor.png",
+    icon = "__Chromium2__/graphics/icons/advanced-electric-motor.png",
     icon_size = 64,
     group = "intermediate-products",
     subgroup = advanced_electric_motor_subgroup,
@@ -416,7 +416,7 @@ if mods["space-exploration"] then
       type = "recipe",
       name = "beryllium-heat-resistant-low-density-structure",
       icons = {
-        { icon = "__Chromium__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64},
+        { icon = "__Chromium2__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64},
         { icon = "__space-exploration-graphics__/graphics/icons/astronomic/planet-orbit.png", icon_size = 64, scale=0.25, shift= {-8, -8}}
       },
       category = "space-crafting",

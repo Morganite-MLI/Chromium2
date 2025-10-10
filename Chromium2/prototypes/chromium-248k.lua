@@ -12,14 +12,14 @@ data:extend({
         flow_color = { r=0.92, g=0.29, b=0.22 },
         pressure_to_speed_ratio = 0.400,
         flow_to_energy_ratio = 0,
-        icon = "__Chromium__/graphics/icons/fi-arc-pure-chrome.png",
+        icon = "__Chromium2__/graphics/icons/fi-arc-pure-chrome.png",
         icon_size = 64, icon_mipmaps = 4,
         order = "a-a"
     },
     {
         type = "item",
         name = "fi-materials-pure-chrome",
-        icon = "__Chromium__/graphics/icons/fi-materials-pure-chrome.png",
+        icon = "__Chromium2__/graphics/icons/fi-materials-pure-chrome.png",
         icon_size = 64,
         stack_size = 100,
         subgroup = "fi_item_subgroup_a-c",
@@ -45,9 +45,9 @@ data:extend({
         icons = (mods["Krastorio2"] and
         {
           { icon = "__248k__/ressources/fluids/el_dirty_water.png", icon_size = 64},
-          { icon = "__Chromium__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.2, shift= {-8, -8}},
+          { icon = "__Chromium2__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.2, shift= {-8, -8}},
         } or {
-          { icon = "__Chromium__/graphics/icons/chromite-ore.png", icon_size = 64},
+          { icon = "__Chromium2__/graphics/icons/chromite-ore.png", icon_size = 64},
         }),
         group = "fi_item_group",
         subgroup = "fi_item_subgroup_f",

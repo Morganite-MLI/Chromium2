@@ -14,7 +14,7 @@ if mods["Krastorio2"] then
             icon_size = 256,
           },
           {
-            icon = "__Chromium__/graphics/icons/chromite-ore.png",
+            icon = "__Chromium2__/graphics/icons/chromite-ore.png",
             icon_size = 64,
             scale = 1.4,
           }
