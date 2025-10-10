@@ -281,7 +281,10 @@ end
   end
   util.add_productivity("automation-core-3")
 
-local turbines_blade_ingredients = {{type="item", name="inconel-718", amount=10}, mods["248k-Redux"] and {type="item", name="fi_materials_GFK", amount=5}, {type="item", name="air-bearing", amount=2}}
+local turbines_blade_ingredients = {{type="item", name="inconel-718", amount=10}, {type="item", name="air-bearing", amount=2}}
+if mods["248k-Redux"] then
+  table.insert(turbines_blade_ingredients, {type="item", name="fi_materials_GFK", amount=5})
+end
 local turbines_blade_subgroup = "intermediate-product"
 if mods["IfNickel-Updated"] then
   turbines_blade_subgroup = "engine-components"
@@ -340,6 +343,10 @@ data:extend({
   }
 })
 
+local air_bearing_ingredients = {{type="item", name="stainless-steel-plate", amount=2},{ type = "fluid", name = "lubricant", amount = 5 }}
+if data.raw.item["cryogenic-seal"] then
+  table.insert(air_bearing_ingredients, {type="item", name="cryogenic-seal", amount=1})
+end
 data:extend({
   {
     type = "item",
@@ -358,7 +365,7 @@ data:extend({
     order = "h",
     enabled = false,
     energy_required = 5,
-    ingredients = {{type="item", name="stainless-steel-plate", amount=2},data.raw.item["cryogenic-seal"] and {type="item", name="cryogenic-seal", amount=1}, { type = "fluid", name = "lubricant", amount = 5 }},
+    ingredients = air_bearing_ingredients,
     results = {{type="item", name="air-bearing", amount=1}},
   }
 })
@@ -370,6 +377,10 @@ end
 local advanced_electric_motor_subgroup = "intermediate-product"
 if mods["IfNickel-Updated"] then
   advanced_electric_motor_subgroup = "engine-components"
+end
+local advanced_electric_motor_ingredients = {{type="item", name="inconel-718", amount=2}, {type="item", name="air-bearing", amount=1}, {type="item", name="electric-engine-unit", amount=2}, { type = "fluid", name = "lubricant", amount = 40 }}
+if mods["ThemTharHills-Updated"] then
+  table.insert(advanced_electric_motor_ingredients, {type="item", name="hv-power-regulator", amount=1})
 end
 data:extend({
   {
@@ -389,7 +400,7 @@ data:extend({
     order = "g",
     enabled = false,
     energy_required = 12,
-    ingredients = {{type="item", name="inconel-718", amount=2}, {type="item", name="air-bearing", amount=1}, {type="item", name="electric-engine-unit", amount=2}, mods["ThemTharHills-Updated"] and {type="item", name="hv-power-regulator", amount=1}, { type = "fluid", name = "lubricant", amount = 40 }},
+    ingredients = advanced_electric_motor_ingredients,
     results = {{type="item", name="advanced-electric-motor", amount=1}},
   }
 })
