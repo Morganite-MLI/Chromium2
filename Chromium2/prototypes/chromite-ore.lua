@@ -68,6 +68,6 @@ data:extend({
     weight = 20*kg,
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
-    drop_sound = item_sounds.resource_inventory_move,
+    drop_sound = item_sounds.resource_inventory_move
   },
 })

@@ -56,16 +56,16 @@ function util.se_matter(params)
       energy_required = params.energy_required,
       enabled = false,
       ingredients = {
-        {sedata, 1},
+        {type = "item", name = sedata, amount=1},
         {type="fluid", name="se-particle-stream", amount=50},
         {type="fluid", name="se-space-coolant-supercooled", amount=25},
       },
       results = {
         {type = "item", name = params.ore, amount = params.quant_out},
         {type="item", name="se-contaminated-scrap", amount=1},
-        {type=item, name=sedata, amount=1, probability=.99},
-        {type=item, name=sejunk, amount=1, probability=.01},
-        {type="fluid", name="se-space-coolant-hot", amount=25, catalyst_amount=25},
+        {type="item", name=sedata, amount=1, probability=.99},
+        {type="item", name=sejunk, amount=1, probability=.01},
+        {type="fluid", name="se-space-coolant-hot", amount=25, ignored_by_productivity = 25, ignored_by_stats = 25},
       }
     }
   })
@@ -100,9 +100,9 @@ function util.se_matter(params)
           {type="fluid", name="se-particle-stream", amount=50},
         },
         results = {
-          {type=item, name="se-kr-matter-liberation-data", amount=1, probability=.99},
-          {type=item, name=sejunk, amount=1, probability=.01},
-          {type="fluid", name="se-particle-stream", amount=params.stream_out, catalyst_amount=50},
+          {type="item", name="se-kr-matter-liberation-data", amount=1, probability=.99},
+          {type="item", name=sejunk, amount=1, probability=.01},
+          {type="fluid", name="se-particle-stream", amount=params.stream_out, ignored_by_productivity = 50, ignored_by_stats = 50},
         }
       }
     })
@@ -309,10 +309,7 @@ end
 function add_ingredient_raw(recipe, ingredient)
   if recipe ~= nil and recipe.ingredients ~= nil then
     for i, existing in pairs(recipe.ingredients) do
-      if (
-          (existing[1] and (existing[1] == ingredient[1] or existing[1] == ingredient.name)) or
-          (existing.name and (existing.name == ingredient[1] or existing.name == ingredient.name))
-      ) then
+      if (existing.name and existing.name == ingredient.name) then
         return
       end
     end
@@ -330,10 +327,7 @@ end
 function set_ingredient(recipe, ingredient, quantity)
   if recipe ~= nil and recipe.ingredients ~= nil then
     for i, existing in pairs(recipe.ingredients) do
-      if existing[1] == ingredient  then
-        existing[2] = quantity
-        return
-      elseif existing.name == ingredient then
+      if existing.name == ingredient then
         existing.amount = quantity
         existing.amount_min = nil
         existing.amount_max = nil
@@ -343,22 +337,21 @@ function set_ingredient(recipe, ingredient, quantity)
     table.insert(recipe.ingredients, {ingredient, quantity})
   end
 end
--- Add a given quantity of product to a given recipe. 
+-- Add a given quantity of product to a given recipe.
 -- Only works for recipes with multiple products
 function util.add_product(recipe_name, product)
   if data.raw.recipe[recipe_name] and
   (data.raw.item[product.name] or data.raw.fluid[product.name]) then
-    local is_fluid = data.raw.fluid[product.name]
-    add_product(data.raw.recipe[recipe_name], product, is_fluid)
+    add_product(data.raw.recipe[recipe_name], product)
   end
 end
 
-function add_product(recipe, product, is_fluid)
+function add_product(recipe, product)
   if recipe ~= nil then
     if recipe.results == nil then
       recipe.results = {}
     end
-    table.insert(recipe.results, {type = is_fluid and "fluid" or "item", name = product.result, amount = product.result_count and product.result_count or 1})
+    table.insert(recipe.results, product)
   end
 end
 
@@ -395,7 +388,7 @@ end
 --    Use amount to set an amount. If that amount is a multiplier instead of an exact amount, set multiply true.
 function util.replace_ingredient(recipe_name, old, new, amount, multiply)
   if data.raw.recipe[recipe_name] and (data.raw.item[new] or data.raw.fluid[new]) then
-    replace_ingredient(data.raw.recipe[recipe_name], old, new, amount, multiply)
+    replace_ingredient(data.raw.recipe[recipe_name], old, new, amount or 1, multiply)
   end
 end
 
@@ -452,7 +445,7 @@ end
 function replace_some_ingredient(recipe, old, old_amount, new, new_amount, is_fluid)
 	if recipe ~= nil and recipe.ingredients ~= nil then
     for i, existing in pairs(recipe.ingredients) do
-      if existing[1] == new or existing.name == new then
+      if existing.name == new then
         return
       end
     end
@@ -460,15 +453,12 @@ function replace_some_ingredient(recipe, old, old_amount, new, new_amount, is_fl
 			if ingredient.name == old then
         ingredient.amount = math.max(1, ingredient.amount - old_amount)
       end
-			if ingredient[1] == old then
-        ingredient[2] = math.max(1, ingredient[2] - old_amount)
-      end
 		end
     add_ingredient(recipe, new, new_amount, is_fluid)
 	end
 end
 
--- set the amount of a product. 
+-- set the amount of a product.
 function util.set_product_amount(recipe_name, product, amount)
   if data.raw.recipe[recipe_name] then
     set_product_amount(data.raw.recipe[recipe_name], product, amount)
@@ -912,7 +902,7 @@ function util.add_unlock_force(technology_name, recipe)
     util.add_unlock(technology_name, recipe)
 end
 
--- sum the products of a recipe 
+-- sum the products of a recipe
 function util.sum_products(recipe_name)
   -- this is going to end up approximate in some cases, integer division is probs fine
   if data.raw.recipe[recipe_name] then
