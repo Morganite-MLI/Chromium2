@@ -7,7 +7,6 @@ if mods["space-exploration"] then
   se_delivery_cannon_recipes["heat-resistant-low-density-structure"] = {name= "heat-resistant-low-density-structure"}
   util.se_landfill({ore="chromite-ore"})
 
-if string.sub(mods["space-exploration"], 1, 3) == "0.6" then
   util.se_matter({ore="chromite-ore", energy_required=1, quant_out=10, stream_out=60})
   data:extend({
   {
@@ -107,65 +106,4 @@ if string.sub(mods["space-exploration"], 1, 3) == "0.6" then
   end
   se_delivery_cannon_recipes["chromium-ingot"] = {name= "chromium-ingot"}
 
-else
-  data.raw.item["chromium-plate"].subgroup = "plates"
-  if mods["Krastorio2"] then
-
-    data:extend({
-    {
-      type = "recipe",
-      name = "enriched-chromium-smelting-vulcanite",
-      category = "smelting",
-      order = "d[chromium-plate]",
-      energy_required = 18,
-      enabled = false,
-      always_show_made_in = true,
-      allow_as_intermediate = false,
-      ingredients = {
-        {name = "enriched-chromium", amount = 8},
-        {name = "se-vulcanite-block", amount = 1},
-      },
-      results = {
-        {name = "chromium-plate", amount = 12},
-      },
-      icons =
-      {
-        { icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64},
-        { icon = "__space-exploration-graphics__/graphics/icons/vulcanite-block.png", icon_size = 32, scale=0.25, shift= {-10, -10}},
-      },
-    },
-    })
-    table.insert(data.raw.technology["se-processing-vulcanite"].effects,
-        {type = "unlock-recipe", recipe= "enriched-chromium-smelting-vulcanite"})
-    data.raw.recipe["enriched-chromium-plate"].order= "d[chromium-plate]"
-    se_delivery_cannon_recipes["enriched-chromium"] = {name= "enriched-chromium"}
-  else
-    data:extend({
-    {
-      type = "recipe",
-      name = "chromium-smelting-vulcanite",
-      category = "smelting",
-      order = "d[chromium-plate]",
-      energy_required = 18,
-      enabled = false,
-      always_show_made_in = true,
-      allow_as_intermediate = false,
-      ingredients = {
-        {name = "chromite-ore", amount = 8},
-        {name = "se-vulcanite-block", amount = 1},
-      },
-      results = {
-        {name = "chromium-plate", amount = 12},
-      },
-      icons =
-      {
-        { icon = "__Chromium__/graphics/icons/chromium-plate.png", icon_size = 64},
-        { icon = "__space-exploration-graphics__/graphics/icons/vulcanite-block.png", icon_size = 32, scale=0.25, shift= {-10, -10}},
-      },
-    },
-    })
-    table.insert(data.raw.technology["se-processing-vulcanite"].effects,
-        {type = "unlock-recipe", recipe= "chromium-smelting-vulcanite"})
-  end
-end
 end
