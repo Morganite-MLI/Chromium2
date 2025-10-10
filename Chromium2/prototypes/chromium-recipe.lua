@@ -22,7 +22,7 @@ data:extend({
     icon_size = 64,
     subgroup = "chromium",
     order = "b[chromium-plate]",
-    stack_size = util.get_stack_size(100)
+    stack_size = 100
   },
   {
     type = "recipe",
@@ -91,7 +91,7 @@ data:extend({
     icon_size = 64,
     subgroup = "chromium",
     order = "b[stainless-steel-plate]",
-    stack_size = util.get_stack_size(100),
+    stack_size = 100,
   },
   {
     type = "recipe",
@@ -147,7 +147,7 @@ data:extend({
     icon_size = 64,
     subgroup = "chromium",
     order = "c[chromel-r-fabric]",
-    stack_size = util.get_stack_size(100),
+    stack_size = 100,
   },
   {
     type = "recipe",
@@ -173,7 +173,7 @@ data:extend({
     icon_size = 128,
     subgroup = "intermediate-product",
     order = "v[basic-vehicle-frame]",
-    stack_size = util.get_stack_size(100),
+    stack_size = 100,
   },
   {
     type = "recipe",
@@ -199,7 +199,7 @@ data:extend({
     icon_size = 128,
     subgroup = "intermediate-product",
     order = "v[vehicle-frame]",
-    stack_size = util.get_stack_size(100),
+    stack_size = 100,
   },
   {
     type = "recipe",
@@ -232,7 +232,7 @@ data:extend({
     group = "intermediate-products",
     subgroup = inconel_subgroup,
     order = "i",
-    stack_size = util.get_stack_size(100),
+    stack_size = 100,
   },
   {
     type = "recipe",
@@ -261,7 +261,7 @@ end
       group = "intermediate-product",
       subgroup = automation_core3_subgroup,
       order = "d",
-      stack_size = util.get_stack_size(50),
+      stack_size = 50,
     },
     {
       type = "recipe",
@@ -295,7 +295,7 @@ data:extend({
     group = "intermediate-products",
     subgroup = turbines_blade_subgroup,
     order = "t",
-    stack_size = util.get_stack_size(50),
+    stack_size = 50,
   },
   {
     type = "recipe",
@@ -326,7 +326,7 @@ data:extend({
     group = "intermediate-products",
     subgroup = hrld_structure_subgroup,
     order = "h",
-    stack_size = util.get_stack_size(50),
+    stack_size = 50,
   },
   {
     type = "recipe",
@@ -349,7 +349,7 @@ data:extend({
     group = "intermediate-products",
     subgroup = "intermediate-product",
     order = "h",
-    stack_size = util.get_stack_size(100),
+    stack_size = 100,
   },
   {
     type = "recipe",
@@ -380,7 +380,7 @@ data:extend({
     group = "intermediate-products",
     subgroup = advanced_electric_motor_subgroup,
     order = "g",
-    stack_size = util.get_stack_size(50),
+    stack_size = 50,
   },
   {
     type = "recipe",

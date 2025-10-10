@@ -1,13 +1,5 @@
 local util = {}
 
-function util.get_stack_size(default)
-  if mods["Krastorio2"] then
-    size = tonumber(settings.startup["kr-stack-size"].value)
-    return size or default
-  end
-  return default
-end
-
 -- se landfill
 -- params: ore, icon_size
 function util.se_landfill(params)

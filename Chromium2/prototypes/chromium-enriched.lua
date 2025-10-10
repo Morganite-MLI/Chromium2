@@ -11,7 +11,7 @@ data:extend(
     group ="raw-material",
     subgroup = "chromium",
     order = "a",
-    stack_size = util.get_stack_size(100)
+    stack_size = 100
   },
   {
     type = "recipe",
