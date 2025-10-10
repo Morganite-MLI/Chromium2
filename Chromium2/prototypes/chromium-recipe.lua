@@ -122,6 +122,7 @@ data:extend({
     {
       type = "recipe",
       name = "polyethylene-plastic",
+      localised_name = { "item-name.plastic-bar" },
       category = "chemistry",
       order = "d[plastic-bar]",
       enabled = false,
