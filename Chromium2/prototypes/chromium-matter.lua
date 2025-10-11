@@ -27,14 +27,14 @@ if mods["Krastorio2"] then
           {
             { "production-science-pack", 1 },
             { "utility-science-pack",    1 },
-            { "matter-tech-card",        1 }
+            { "kr-matter-tech-card",        1 }
           },
           time = 45
         }
       },
     })
 
-  matter.createMatterRecipe({
+  matter.make_recipes({
     material = { type = "item", name = "chromite-ore", amount = 10 },
     matter_count = 5,
     energy_required = 1,
@@ -42,7 +42,7 @@ if mods["Krastorio2"] then
     unlocked_by_technology = "chromium-matter-processing"
   })
 
-  matter.createMatterRecipe({
+  matter.make_recipes({
     material = { type = "item", name = "chromium-plate", amount = 10 },
     matter_count = 10,
     energy_required = 3,

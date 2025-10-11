@@ -56,14 +56,14 @@ if mods["Krastorio2"] then
           { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64},
           { icon = "__Chromium2__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.125, shift= {-8, -8}}
         },
-        category = "electrolysis",
+        category = "kr-electrolysis",
         order = "a[chromium-plate]",
         energy_required = 25,
         enabled = false,
         always_show_made_in = true,
         ingredients = {
           {type = "fluid", name = "sulfuric-acid", amount = 25},
-          {type = "fluid", name = "ammonia", amount = 50},
+          {type = "fluid", name = "kr-ammonia", amount = 50},
           {type = "item",  name = "chromite-ore", amount = 20}
         },
         results = {

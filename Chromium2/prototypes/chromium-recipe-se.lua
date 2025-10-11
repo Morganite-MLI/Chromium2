@@ -50,7 +50,7 @@ if mods["space-exploration"] then
     },
     energy_required = 45,
     ingredients = {
-      {name = mods["Krastorio2"] and "enriched-chromium" or "chromite-ore", amount = 24},
+      {type = "item", name = mods["Krastorio2"] and "enriched-chromium" or "chromite-ore", amount = 24},
       {type = "fluid", name = "se-pyroflux", amount = 10},
     },
     enabled = false,
@@ -81,11 +81,11 @@ if mods["space-exploration"] then
       {icon = "__Chromium2__/graphics/icons/chromium-ingot.png", icon_size = 32, scale = 0.125, shift = {-8, -8}},
     },
     results = {
-      {name = "chromium-plate", amount = 10},
+      {type="item", name = "chromium-plate", amount = 10},
     },
     energy_required = 3.75,
     ingredients = {
-      {name = "chromium-ingot", amount = 1}
+      {type="item", name = "chromium-ingot", amount = 1}
     },
     enabled = false,
     always_show_made_in = true,
