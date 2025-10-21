@@ -1,8 +1,9 @@
 {
     "name": "Chromium2",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "factorio_version": "2.0",
     "title": "Chromium",
+    "description": "Chromium is a mod adding the element chromium.\n\nThis mod is inspired by Brevven's BZ mods.",
     "author": "Timeken, cackling fiend",
     "homepage": "https://discord.gg/ufvFUJtVwk",
     "dependencies": [
@@ -21,7 +22,7 @@
       "? RampantArsenal",
       "? space-exploration",
       "? Tantalite2",
-      "? ThemTharHills-Updated"
-    ],
-    "description": "Chromium is a mod adding the element chromium.\n\nThis mod is inspired by Brevven's BZ mods."
+      "? ThemTharHills-Updated",
+      "! space-age"
+    ]
 }
