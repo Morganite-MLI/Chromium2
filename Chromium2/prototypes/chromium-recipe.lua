@@ -80,7 +80,7 @@ if mods["IfNickel-Updated"] then
     stainless_steel_ingredients = {{type="item", name="steel-plate", amount=8}, {type="item", name="chromium-plate", amount=1}, {type="item", name="nickel-plate", amount=1}}
 end
 local stainless_steel_category = "crafting"
-if mods["bzfoundry"] then
+if mods["bzfoundry2"] then
   stainless_steel_category = "founding"
 end
 data:extend({
@@ -110,7 +110,7 @@ local polyethylene_plastic_ingredients = {
     {type = "fluid", name = "steam", amount = 50},
     {type = "item",  name = "chromium-plate", amount = 2}
 }
-if mods["bzgas"] and mods["bzsilicon"] then
+if mods["bzgas2"] and mods["bzsilicon2"] then
       polyethylene_plastic_ingredients = {
         {type = "fluid", name = "gas", amount = 50},
         {type = "fluid", name = "steam", amount = 50},
@@ -163,7 +163,7 @@ data:extend({
 })
 
 local basic_vehicle_frame_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="copper-plate", amount=10}}
-if mods["bzaluminum"] then
+if mods["bzaluminum2"] then
   basic_vehicle_frame_ingredients = {{type="item", name="steel-plate", amount=5}, {type="item", name="alumina", amount=10}}
 end
 data:extend({
@@ -189,7 +189,7 @@ data:extend({
 })
 
 local vehicle_frame_ingredients = {{type="item", name="basic-vehicle-frame", amount=1}, {type="item", name="stainless-steel-plate", amount=15}, {type="item", name="copper-plate", amount=20}}
-if mods["bzaluminum"] then
+if mods["bzaluminum2"] then
   vehicle_frame_ingredients = {{type="item", name="basic-vehicle-frame", amount=1}, {type="item", name="stainless-steel-plate", amount=15}, {type="item", name="aluminum-6061", amount=20}}
 end
 data:extend({
@@ -223,7 +223,7 @@ if mods["Tantalite2"] then
 end
 local inconel_category = "crafting"
 local inconel_subgroup = "intermediate-product"
-if mods["bzfoundry"] then
+if mods["bzfoundry2"] then
   inconel_category = "founding"
   inconel_subgroup = "foundry-intermediate"
 end

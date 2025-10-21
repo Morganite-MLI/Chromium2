@@ -15,7 +15,7 @@ if mods["248k-Redux"] then
     util.remove_ingredient("steam-turbine", "fi_materials_GFK")
 end
 
-if mods["bzaluminum"] then
+if mods["bzaluminum2"] then
     util.remove_ingredient("car", "aluminum-6061")
     util.remove_ingredient("vehicle-warden", "aluminum-6061")
     util.add_ingredient("vehicle-warden", "vehicle-frame", 1)
