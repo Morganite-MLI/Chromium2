@@ -43,11 +43,11 @@ if mods["Krastorio2"] then
     unlocked_by = "chromium-matter-processing"
   })
 
-  matter.make_recipes({
+  matter.make_deconversion_recipe({
     material = { type = "item", name = "chromium-plate", amount = 10 },
     matter_count = 10,
     energy_required = 3,
-    only_deconversion = true,
+    -- only_deconversion = true,
     needs_stabilizer = true,
     unlocked_by = "chromium-matter-processing"
   })
