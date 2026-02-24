@@ -11,8 +11,8 @@ util.remove_ingredient("assembling-machine-3", "electric-engine-unit")
 
 -- Mod changes
 if mods["248k-Redux"] then
-    util.replace_ingredient("fi_low-density-structure_recipe", "copper-plate", "chromel-r-fabric", 10)
-    util.remove_ingredient("steam-turbine", "fi_materials_GFK")
+    util.replace_ingredient("fi_low-density-structure", "copper-plate", "chromel-r-fabric", 10)
+    util.remove_ingredient("steam-turbine", "fi_GFK")
 end
 
 if mods["bzaluminum2"] then
