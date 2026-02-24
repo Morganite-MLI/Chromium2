@@ -9,7 +9,7 @@
     "dependencies": [
       "base >= 1.1.0",
       "bzlib",
-      "? 248k-Redux",
+      "? 248k-Redux >= 0.1.35",
       "? aai-industry",
       "? BrassTacks-Updated",
       "? bobassembly",

@@ -287,7 +287,7 @@ end
 
 local turbines_blade_ingredients = {{type="item", name="inconel-718", amount=10}, {type="item", name="air-bearing", amount=2}}
 if mods["248k-Redux"] then
-  table.insert(turbines_blade_ingredients, {type="item", name="fi_materials_GFK", amount=5})
+  table.insert(turbines_blade_ingredients, {type="item", name="fi_GFK", amount=5})
 end
 local turbines_blade_subgroup = "intermediate-product"
 if mods["IfNickel-Updated"] then
