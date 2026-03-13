@@ -50,6 +50,7 @@ data:extend(
   {
       type = "recipe",
       name = "enriched-chromium-plate",
+      localised_name = { "item-name.chromium-plate" },
       icons =
       {
         { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64 },
