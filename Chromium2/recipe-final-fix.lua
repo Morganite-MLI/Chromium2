@@ -1,8 +1,10 @@
 local util = require("data-util")
 
 
-if mods["IfNickel-Updated"] and data.raw["nitinol-plate"] then
+if mods["IfNickel-Updated"] and util.get_item("nitinol-plate") then
     util.replace_ingredient("nitinol-plate", "nickel-plate", "chromel-r-fabric")
+    util.replace_ingredient("nitinol-plate-helium", "nickel-plate", "chromel-r-fabric")
+    util.replace_ingredient("nitinol-plate-space", "nickel-plate", "chromel-r-fabric")
 
     if mods["space-exploration"]  then
         util.add_prerequisite("se-rocket-launch-pad", "nitinol-processing")
@@ -41,3 +43,5 @@ if mods["Krastorio2"] then
         util.remove_ingredient("se-space-assembling-machine", mods["BrassTacks-Updated"] and "complex-joint")
     end
 end
+
+util.redo_recycling()

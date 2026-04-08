@@ -7,7 +7,7 @@ if mods["space-exploration"] then
   se_delivery_cannon_recipes["heat-resistant-low-density-structure"] = {name= "heat-resistant-low-density-structure"}
   util.se_landfill({ore="chromite-ore"})
 
-  util.se_matter({ore="chromite-ore", energy_required=1, quant_out=10, stream_out=60})
+  util.se_matter({ore="chromite-ore", energy_required=1, quant_out=10, stream_out=600})
   data:extend({
   {
     type = "item-subgroup",
