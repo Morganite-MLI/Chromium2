@@ -47,7 +47,7 @@ if mods["bobassembly"] then
 end
 
 if mods["space-exploration"] then
-    util.add_product(mods["space-exploration"] and "se-scrap-recycling", { type = "item", name = "chromium-ore", amount=1, probability=0.05})
+    util.add_product(mods["space-exploration"] and "se-scrap-hard-recycling", { type = "item", name = "chromium-ore", amount=1, probability=0.05})
 
     util.remove_ingredient("se-space-assembling-machine", "low-density-structure")
     util.remove_ingredient("se-space-assembling-machine", "se-heat-shielding")
