@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.2
+Date: 24.05.2026
+  Thanks to Morganite for all the fixes
+  Bug Fixes:
+    - Refactor matter recipes to use bzlib functions and move to data stage
+    - Fix results of matter liberation recipe-final-fix.lua
+    - Fix changes to nitinol plate recipes
+---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 16.03.2026
   Bug Fixes:
