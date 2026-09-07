@@ -42,7 +42,7 @@ if mods["space-exploration"] then
   },
   {
     type = "recipe",
-    category = "smelting",
+    categories = {"smelting"},
     name = "molten-chromium",
     subgroup = "chromium",
     results = {
@@ -61,7 +61,7 @@ if mods["space-exploration"] then
   {
     type = "recipe",
     name = "chromium-ingot",
-    category = "casting",
+    categories = {"casting"},
     results = {{type="item", name="chromium-ingot", amount=1}},
     energy_required = 18.75,
     ingredients = {
@@ -73,7 +73,7 @@ if mods["space-exploration"] then
   },
   {
     type = "recipe",
-    category = "crafting",
+    categories = {"crafting"},
     name = "chromium-ingot-to-plate",
 
     icons = {

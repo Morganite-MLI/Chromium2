@@ -19,7 +19,7 @@ data:extend(
     main_product="enriched-chromium",
     icon = "__Chromium2__/graphics/icons/enriched-chromium.png",
     icon_size = 64,
-    category = "chemistry",
+    categories = {"chemistry"},
     energy_required = 3,
     enabled = false,
     always_show_made_in = true,
@@ -56,7 +56,7 @@ data:extend(
         { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64 },
         { icon = "__Chromium2__/graphics/icons/enriched-chromium.png", icon_size = 64, scale=0.125, shift= {-8, -8}},
       },
-      category = "smelting",
+      categories = {"smelting"},
       energy_required = 16,
       enabled = false,
       always_show_made_in = true,
@@ -68,7 +68,7 @@ data:extend(
 	{
 		type = "recipe",
 		name = "dirty-water-filtration-chromium",
-		category = "kr-fluid-filtration",
+		categories = {"kr-fluid-filtration"},
 		icons =
 		{
 			{
