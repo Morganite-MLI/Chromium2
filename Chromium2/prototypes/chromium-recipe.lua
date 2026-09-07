@@ -27,7 +27,7 @@ data:extend({
   {
     type = "recipe",
     name = "chromium-plate",
-    category = "smelting",
+    categories = {"smelting"},
     order = "a[chromium-plate]",
     icons = (mods["Krastorio2"] and
         {
@@ -56,7 +56,7 @@ if mods["Krastorio2"] then
           { icon = "__Chromium2__/graphics/icons/chromium-plate.png", icon_size = 64},
           { icon = "__Chromium2__/graphics/icons/chromite-ore.png", icon_size = 64, scale=0.125, shift= {-8, -8}}
         },
-        category = "kr-electrolysis",
+        categories = {"kr-electrolysis"},
         order = "a[chromium-plate]",
         energy_required = 25,
         enabled = false,
@@ -96,7 +96,7 @@ data:extend({
   {
     type = "recipe",
     name = "stainless-steel-plate",
-    category = stainless_steel_category,
+    categories = {stainless_steel_category},
     order = "d[stainless-steel-plate]",
     enabled = false,
     energy_required = 4,
@@ -123,7 +123,7 @@ data:extend({
       type = "recipe",
       name = "polyethylene-plastic",
       localised_name = { "item-name.plastic-bar" },
-      category = "chemistry",
+      categories = {"chemistry"},
       order = "d[plastic-bar]",
       enabled = false,
       energy_required = 8,
@@ -153,7 +153,7 @@ data:extend({
   {
     type = "recipe",
     name = "chromel-r-fabric",
-    category = chromel_r_fabric_crafting,
+    categories = {chromel_r_fabric_crafting},
     order = "c[chromel-r-fabric]",
     enabled = false,
     energy_required = 5,
@@ -179,7 +179,7 @@ data:extend({
   {
     type = "recipe",
     name = "basic-vehicle-frame",
-    category = "crafting",
+    categories = {"crafting"},
     order = "v[basic-vehicle-frame]",
     enabled = false,
     energy_required = 4,
@@ -205,7 +205,7 @@ data:extend({
   {
     type = "recipe",
     name = "vehicle-frame",
-    category = "crafting",
+    categories = {"crafting"},
     order = "v[vehicle-frame]",
     enabled = false,
     energy_required = 6,
@@ -241,7 +241,7 @@ data:extend({
   {
     type = "recipe",
     name = "inconel-718",
-    category = inconel_category,
+    categories = {inconel_category},
     order = "i",
     enabled = false,
     energy_required = 30,
@@ -270,7 +270,7 @@ end
     {
       type = "recipe",
       name = "automation-core-3",
-      category = "crafting",
+      categories = {"crafting"},
       order = "d",
       enabled = false,
       energy_required = 5,
@@ -307,7 +307,7 @@ data:extend({
   {
     type = "recipe",
     name = "turbine-blades",
-    category = "crafting",
+    categories = {"crafting"},
     order = "t",
     enabled = false,
     energy_required = 15,
@@ -338,7 +338,7 @@ data:extend({
   {
     type = "recipe",
     name = "heat-resistant-low-density-structure",
-    category = "crafting",
+    categories = {"crafting"},
     order = "h",
     enabled = false,
     energy_required = 8,
@@ -365,7 +365,7 @@ data:extend({
   {
     type = "recipe",
     name = "air-bearing",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     order = "h",
     enabled = false,
     energy_required = 5,
@@ -400,7 +400,7 @@ data:extend({
   {
     type = "recipe",
     name = "advanced-electric-motor",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     order = "g",
     enabled = false,
     energy_required = 12,
@@ -423,7 +423,7 @@ if mods["space-exploration"] then
         { icon = "__Chromium2__/graphics/icons/heat-resistant-low-density-structure.png", icon_size = 64},
         { icon = "__space-exploration-graphics__/graphics/icons/astronomic/planet-orbit.png", icon_size = 64, scale=0.25, shift= {-8, -8}}
       },
-      category = "space-crafting",
+      categories = {"space-crafting"},
       order = "h",
       enabled = false,
       energy_required = 10,
