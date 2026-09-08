@@ -247,6 +247,7 @@ data:extend({
     energy_required = 30,
     ingredients = inconel_ingredients,
     results = {{type="item", name="inconel-718", amount=10}},
+    allow_productivity = true
   }
 })
 
