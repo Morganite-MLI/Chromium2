@@ -1,7 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.1.1
+Date: 08.09.2026
+  Compatibility:
+    - Updated to 2.1 (thanks to pla for doing the tedious parts)
+  Changes:
+    - Fixed changelog format
+---------------------------------------------------------------------------------------------------
+Version: 2.1.3
+Date: 08.09.2026
+  Locale:
+    - Added Polish localization from S3BA
+  Changes:
+    - Added productivity to inconel recipe
+---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: 24.05.2026
-  Thanks to Morganite for all the fixes
+  Info:
+    - Thanks to Morganite for all the fixes
   Bug Fixes:
     - Refactor matter recipes to use bzlib functions and move to data stage
     - Fix results of matter liberation recipe-final-fix.lua
